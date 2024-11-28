@@ -1,0 +1,9 @@
+# Use lm() for the same data
+lm_fit <- lm(y ~ x1 + x2 + x3, data = df)
+
+# Extract coefficients and residual standard deviation from lm()
+lm_coefficients <- coef(lm_fit)          # Estimated coefficients
+lm_sigma <- summary(lm_fit)$sigma       # Residual standard deviation
+
+cat("Estimated Coefficients (lm):", lm_coefficients, "\n")
+cat("Estimated Sigma (lm):", lm_sigma, "\n")
